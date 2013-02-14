@@ -30,6 +30,7 @@ set directory=$HOME/.vim/swap
 set backupdir=$HOME/.vim/bk
 set backupskip=$HOME/.vim/bkskip
 let g:unite_enable_start_insert=0
+let g:neocomplcache_enable_at_startup=1
 noremap <C-U><C-B> :Unite buffer<CR>
 noremap <C-U><C-F> :UniteWithBufferDir -buffer-name=files file<CR>
 noremap <C-U><C-R> :Unite file_mru<CR>
