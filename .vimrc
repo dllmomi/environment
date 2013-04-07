@@ -15,6 +15,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'tpope/vim-fugitive'
 
 filetype plugin on
 filetype indent on
