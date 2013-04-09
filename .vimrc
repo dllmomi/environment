@@ -60,3 +60,5 @@ nnoremap <silent> uf :UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ur :Unite file_mru<CR>
 nnoremap <silent> vf :VimFiler -split -simple -winwidth=30 -no-quit<CR>
 nnoremap <silent> vs :VimShell<CR>
+
+au FileType javascript set tabstop=4 shiftwidth=4
