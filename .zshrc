@@ -20,8 +20,16 @@ RPROMPT="%1(v|%F{green}%1v%f|)"
 # zsh increment complete
 source ~/.zsh/incr-0.2.zsh
 
+# core util
+PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+eval $(gdircolors ~/.dircolors-solarized/dircolors.ansi-universal)
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
 # zsh local environments file
-test -e ~/.zshrc.local
-if [ $? -eq 0 ]; then
+if [ eval $(test ~/.zshrc.local) ]; then
   source ~/.zshrc.local
 fi
