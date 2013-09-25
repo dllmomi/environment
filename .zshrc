@@ -33,3 +33,6 @@ fi
 if [ eval $(test ~/.zshrc.local) ]; then
   source ~/.zshrc.local
 fi
+
+# keybind: vim style
+bindkey -v
