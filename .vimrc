@@ -51,8 +51,11 @@ let g:neocomplcache_enable_at_startup=1
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_safe_mode_by_default=0
 let g:jscomplete_use = ['dom', 'moz']
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
 let g:syntastic_javascript_checker = 'jshint'
-let g:tagbar_ctags_bin = 'usr/bin/ctags'
+let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+set tags+=/Users/mitsunari_ichikawa/dev/noren/tags
 
 " shortcut
 nnoremap <silent> ub :Unite buffer<CR>
@@ -60,5 +63,12 @@ nnoremap <silent> uf :UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ur :Unite file_mru<CR>
 nnoremap <silent> vf :VimFiler -split -simple -winwidth=30 -no-quit<CR>
 nnoremap <silent> vs :VimShell<CR>
+nnoremap <silent> tb :TagbarToggle<CR>
+nnoremap <silent> <S-l> :5wincmd ><CR>
+nnoremap <silent> <S-h> :5wincmd <<CR>
+nnoremap <silent> <S-k> :5wincmd +<CR>
+nnoremap <silent> <S-j> :5wincmd -<CR>
 
 au FileType javascript set tabstop=4 shiftwidth=4
+au FileType html set tabstop=4 shiftwidth=4
+au FileType erb set tabstop=4 shiftwidth=4
