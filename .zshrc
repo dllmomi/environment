@@ -4,6 +4,7 @@ PATH=/usr/local/bin:$PATH
 PATH=$PATH:~/.rbenv/bin
 eval "$(rbenv init -)"
 
+PROMPT=$'\[%F{blue}%B%n%f:%F{cyan}%~%b%f\]\$ '
 # git completion with installed git on homebrew.
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
@@ -17,9 +18,6 @@ precmd () {
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 RPROMPT="%1(v|%F{green}%1v%f|)"
-# zsh increment complete
-source ~/.zsh/incr-0.2.zsh
-
 # core util
 PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
@@ -27,6 +25,11 @@ MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 eval $(gdircolors ~/.dircolors-solarized/dircolors.ansi-universal)
 if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
+# zsh increment complete
+if [ eval $(test ~/.zsh/incr-0.2.zsh) ]; then
+  source ~/.zsh/incr-0.2.zsh
 fi
 
 # zsh local environments file
