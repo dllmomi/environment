@@ -9,6 +9,14 @@ load_file() {
 }
 PROMPT=$'\[%F{blue}%B%n%f:%F{cyan}%~%b%f\]\$ '
 
+# basically configurations
+export HISTFILE="$HOME/.zsh/workspace/.zsh_history"
+export HISTSIZE=1000
+export SAVEHIST=10000
+setopt hist_ignore_dups
+setopt EXTENDED_HISTORY
+bindkey '^R' history-incremental-search-backward
+
 eval "$(rbenv init -)"
 # git completion with installed git on homebrew.
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -33,7 +41,7 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # zsh increment complete
-ZSH_INCREMENT_COMPLETE_FILE="$HOME/.zsh/incr-0.2.zsh"
+ZSH_INCREMENT_COMPLETE_FILE="$HOME/.zsh/plugins/incr-0.2.zsh"
 load_file $ZSH_INCREMENT_COMPLETE_FILE
 
 # zsh local environments file
