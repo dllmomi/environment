@@ -26,6 +26,7 @@ NeoBundle 'scrooloose/syntastic'
 
 " NeoBundleInstall targets about other
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'rking/ag.vim'
 
 filetype plugin on
 filetype indent on
@@ -53,7 +54,7 @@ let g:vimfiler_safe_mode_by_default=0
 let g:jscomplete_use = ['dom', 'moz']
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_checker = 'jshint'
+let g:syntastic_javascript_checkers = ['jshint']
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 set tags+=/Users/mitsunari_ichikawa/dev/noren/tags
 
