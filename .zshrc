@@ -2,9 +2,14 @@ export LANG=ja_JP.UTF-8
 
 PATH=/usr/local/bin:$PATH
 PATH=$PATH:~/.rbenv/bin
-eval "$(rbenv init -)"
-
+load_file() {
+  if [ -f $1 ]; then
+    source $1
+  fi
+}
 PROMPT=$'\[%F{blue}%B%n%f:%F{cyan}%~%b%f\]\$ '
+
+eval "$(rbenv init -)"
 # git completion with installed git on homebrew.
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
@@ -28,14 +33,12 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 # zsh increment complete
-if [ eval $(test ~/.zsh/incr-0.2.zsh) ]; then
-  source ~/.zsh/incr-0.2.zsh
-fi
+ZSH_INCREMENT_COMPLETE_FILE="$HOME/.zsh/incr-0.2.zsh"
+load_file $ZSH_INCREMENT_COMPLETE_FILE
 
 # zsh local environments file
-if [ eval $(test ~/.zshrc.local) ]; then
-  source ~/.zshrc.local
-fi
+LOCAL_ENV_FILE="$HOME/.zshrc.local"
+load_file $LOCAL_ENV_FILE
 
 # keybind: vim style
 bindkey -v
