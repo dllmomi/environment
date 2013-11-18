@@ -45,6 +45,9 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 set directory=$HOME/.vim/swap
 set backupdir=$HOME/.vim/bk
 set backupskip=$HOME/.vim/bkskip
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,cp932,sjis,utf-8
+set fileformats=unix,dos,mac
 
 " plugins configulations
 let g:unite_enable_start_insert=0
