@@ -14,6 +14,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'szw/vim-tags'
 
 " NeoBundleInstall targets about git
 NeoBundle 'tpope/vim-fugitive'
@@ -46,7 +47,7 @@ set directory=$HOME/.vim/swap
 set backupdir=$HOME/.vim/bk
 set backupskip=$HOME/.vim/bkskip
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,cp932,sjis,utf-8
+set fileencodings=iso-2022-jp,euc-jp,utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 
 " plugins configulations
