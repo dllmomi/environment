@@ -47,7 +47,7 @@ set directory=$HOME/.vim/swap
 set backupdir=$HOME/.vim/bk
 set backupskip=$HOME/.vim/bkskip
 set encoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,utf-8,cp932,sjis
+set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 
 " plugins configulations
