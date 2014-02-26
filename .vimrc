@@ -22,12 +22,13 @@ NeoBundle 'tpope/vim-fugitive'
 " NeoBundleInstall targets about JS
 NeoBundle 'jiangmiao/simple-javascript-indenter'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'teramako/jscomplete-vim'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'marijnh/tern_for_vim'
 
 " NeoBundleInstall targets about other
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'sjl/gundo.vim'
 
 filetype plugin on
 filetype indent on
@@ -49,6 +50,7 @@ set backupskip=$HOME/.vim/bkskip
 set encoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
+set ignorecase
 
 " plugins configulations
 let g:unite_enable_start_insert=0
