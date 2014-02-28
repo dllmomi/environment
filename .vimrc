@@ -15,6 +15,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimfiler'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'szw/vim-tags'
 
 " NeoBundleInstall targets about git
