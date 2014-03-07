@@ -86,3 +86,17 @@ nnoremap <silent> <S-j> :5wincmd -<CR>
 au FileType javascript set tabstop=4 shiftwidth=4
 au FileType html set tabstop=4 shiftwidth=4
 au FileType erb set tabstop=4 shiftwidth=4
+
+" linking Kobito
+" copied from http://qiita.com/Linda_pp/items/ec458977a6552050855b
+function! s:open_kobito(...)
+  if a:0 == 0
+    call system('open -a Kobito '.expand('%:p'))
+  else
+    call system('open -a Kobito '.join(a:000, ' '))
+  endif
+endfunction
+
+command! -nargs=* Kobito call s:open_kobito(<f-args>)
+command! -nargs=* KobitoClose call system("osascript -e 'tell application \"Kobito\" to quit'")
+command! -nargs=* KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
