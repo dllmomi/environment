@@ -75,7 +75,6 @@ set tags+=/Users/mitsunari_ichikawa/dev/noren/tags
 nnoremap <silent> ub :Unite buffer<CR>
 nnoremap <silent> uf :UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ur :Unite file_mru<CR>
-nnoremap <silent> vf :VimFiler -split -simple -winwidth=30 -no-quit<CR>
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> tb :TagbarToggle<CR>
 nnoremap <silent> <S-l> :5wincmd ><CR>
