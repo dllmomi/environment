@@ -81,10 +81,11 @@ nnoremap <silent> <S-l> :5wincmd ><CR>
 nnoremap <silent> <S-h> :5wincmd <<CR>
 nnoremap <silent> <S-k> :5wincmd +<CR>
 nnoremap <silent> <S-j> :5wincmd -<CR>
+nnoremap <C-H> :GundoShow<CR>
+nnoremap <C-]> g<C-]>
 
 au FileType javascript set tabstop=4 shiftwidth=4
 au FileType html set tabstop=4 shiftwidth=4
-au FileType erb set tabstop=4 shiftwidth=4
 
 " linking Kobito
 " copied from http://qiita.com/Linda_pp/items/ec458977a6552050855b
