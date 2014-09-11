@@ -48,5 +48,7 @@ load_file $ZSH_INCREMENT_COMPLETE_FILE
 LOCAL_ENV_FILE="$HOME/.zshrc.local"
 load_file $LOCAL_ENV_FILE
 
-# keybind: vim style
+# keybind: vi style
 bindkey -v
+# use history incremental search keyword on vi style
+bindkey "^R" history-incremental-search-backward
