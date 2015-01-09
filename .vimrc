@@ -1,38 +1,26 @@
+if !1 | finish | endif
+
 set nocompatible
 filetype off
 
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
 if has('vim_starting')
-set nocompatible               " Be iMproved
-
-" Required:
-set runtimepath+=~/.vim/bundle/neobundle.vim/
+  if &compatible
+    set nocompatible
+  endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
 
 call neobundle#end()
 
-" Required:
 filetype plugin indent on
 
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
 
 " NeoBundleInstall targets(basically)
-NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc', {
       \   'build' : {
       \     'mac' : 'make -f make_mac.mak',
@@ -62,8 +50,6 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'sjl/gundo.vim'
 
-filetype plugin on
-filetype indent on
 syntax on
 
 " basically vim configurations
@@ -92,9 +78,11 @@ let g:neocomplcache_enable_at_startup=1
 let g:vimfiler_as_default_explorer=1
 let g:vimfiler_safe_mode_by_default=0
 let g:jscomplete_use = ['dom', 'moz']
+"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 set tags+=/Users/mitsunari_ichikawa/dev/noren/tags
 
