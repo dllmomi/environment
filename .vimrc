@@ -49,6 +49,8 @@ NeoBundle 'marijnh/tern_for_vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle "aklt/plantuml-syntax"
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 syntax on
 
@@ -73,6 +75,14 @@ set ignorecase
 set clipboard+=autoselect
 
 " plugins configulations
+colorscheme default
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=234
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_guide_size = 1
+
 let g:unite_enable_start_insert=0
 let g:neocomplcache_enable_at_startup=1
 let g:vimfiler_as_default_explorer=1
