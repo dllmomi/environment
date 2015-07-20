@@ -12,40 +12,41 @@ endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-NeoBundleFetch 'Shougo/neobundle.vim'
+  NeoBundleFetch 'Shougo/neobundle.vim'
 
-" NeoBundleInstall targets(basically)
-NeoBundle 'Shougo/vimproc', {
-      \   'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \   },
-      \ }
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'szw/vim-tags'
+  " NeoBundleInstall targets(basically)
+  NeoBundle 'Shougo/vimproc', {
+        \   'build' : {
+        \     'mac' : 'make -f make_mac.mak',
+        \     'unix' : 'make -f make_unix.mak',
+        \   },
+        \ }
+  NeoBundle 'Shougo/vimshell'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'Shougo/neocomplcache'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
+  NeoBundle 'Shougo/vimfiler'
+  NeoBundle 'Shougo/neomru.vim'
+  NeoBundle 'szw/vim-tags'
 
-" NeoBundleInstall targets about git
-NeoBundle 'tpope/vim-fugitive'
+  " NeoBundleInstall targets about git
+  NeoBundle 'tpope/vim-fugitive'
 
-" NeoBundleInstall targets about JS
-NeoBundle 'jiangmiao/simple-javascript-indenter'
-NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'marijnh/tern_for_vim'
+  " NeoBundleInstall targets about JS
+  NeoBundle 'jiangmiao/simple-javascript-indenter'
+  NeoBundle 'jelera/vim-javascript-syntax'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'marijnh/tern_for_vim'
 
-" NeoBundleInstall targets about other
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle "aklt/plantuml-syntax"
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'elixir-lang/vim-elixir'
+  " NeoBundleInstall targets about other
+  NeoBundle 'majutsushi/tagbar'
+  NeoBundle 'rking/ag.vim'
+  NeoBundle 'sjl/gundo.vim'
+  NeoBundle "aklt/plantuml-syntax"
+  NeoBundle 'nathanaelkane/vim-indent-guides'
+  NeoBundle 'elixir-lang/vim-elixir'
+  NeoBundle 'tyru/eskk.vim'
 
 call neobundle#end()
 
@@ -96,6 +97,13 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 set tags+=/Users/mitsunari_ichikawa/dev/noren/tags
+
+" eskk
+if has('unix') && isdirectory($HOME . '/.vim/bundle/eskk.vim')
+  let g:eskk#directory = "~/vim/skk"
+  let g:eskk#dictionary = { 'path': "~/.vim/skk/.skk-jisyo", 'sorted': 0, 'encoding': 'utf-8', }
+  let g:eskk#large_dictionary = { 'path': "~/.vim/skk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'utf-8', }
+endif
 
 " shortcut
 nnoremap <silent> ub :Unite buffer<CR>
