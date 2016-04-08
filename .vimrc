@@ -73,6 +73,7 @@ set encoding=utf-8
 set fileencodings=utf-8,cp932,sjis
 set fileformats=unix,dos,mac
 set ignorecase
+set hlsearch
 " clipboard sharing: need brew install reattach-to-user-namespace
 set clipboard+=autoselect
 
