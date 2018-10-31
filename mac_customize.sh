@@ -18,3 +18,16 @@ brew install git openssl tmux coreutils
 #   * add entry for .zshrc.local to "alias ls='gls --color=auto"
 git clone https://github.com/tomislav/osx-terminal.app-colors-solarized.git ~/.osx-terminal.app-colors-solarized
 git clone https://github.com/seebi/dircolors-solarized.git ~/.dircolors-solarized
+echo "alias ls='gls --color=auto'" >> ~/.zshrc.local
+
+# install anyenv
+git clone https://github.com/riywo/anyenv ~/.anyenv
+echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zshrc.local
+echo 'eval "$(anyenv init -)"' >> ~/.zshrc.local
+exec $SHELL -l
+
+# install for nvim environments
+brew install python nvim
+pip3 install --user --upgrade neovim
+echo "alias vi='nvim'"
+exec $SHELL -l
