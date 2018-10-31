@@ -31,3 +31,8 @@ brew install python nvim
 pip3 install --user --upgrade neovim
 echo "alias vi='nvim'"
 exec $SHELL -l
+mkdir ~/.eskk
+
+# zsh environments
+mkdir -p ~/.zsh/workspace
+mkdir -p ~/.zsh/plugins
