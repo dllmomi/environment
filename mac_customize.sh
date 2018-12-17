@@ -23,7 +23,7 @@ echo "alias ls='gls --color=auto'" >> ~/.zshrc.local
 # install anyenv
 git clone https://github.com/riywo/anyenv ~/.anyenv
 echo 'export PATH="$HOME/.anyenv/bin:$PATH"' >> ~/.zshrc.local
-echo 'eval "$(anyenv init -)"' >> ~/.zshrc.local
+echo 'eval "$(anyenv init - zsh)"' >> ~/.zshrc.local
 exec $SHELL -l
 
 # install for nvim environments

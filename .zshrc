@@ -17,7 +17,6 @@ setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 bindkey '^R' history-incremental-search-backward
 
-eval "$(rbenv init -)"
 # git completion with installed git on homebrew.
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
