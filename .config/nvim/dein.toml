@@ -2,54 +2,31 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = 'tools\\update-dll-mingw'
-  elseif dein#util#_is_cygwin()
-    let cmd = 'make -f make_cygwin.mak'
-  elseif executable('gmake')
-    let cmd = 'gmake'
-  else
-    let cmd = 'make'
-  endif
-  let g:dein#plugin.build = cmd
-'''
+repo = 'vim-denops/denops.vim'
 
 [[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_post_update = '''
-  let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
-'''
+repo = 'Shougo/ddu.vim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
+repo = 'Shougo/ddu-ui-filer'
 
 [[plugins]]
-repo = 'cespare/vim-toml'
+repo = 'Shougo/ddu-source-file'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo = 'Shougo/ddu-column-filename'
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['unite.vim']
+repo = 'Shougo/ddu-kind-file'
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
-
-[[plugins]]
-repo = 'scrooloose/syntastic'
+repo = 'Shougo/ddc.vim'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'szw/vim-tags'
-
-[[plugins]]
 repo = 'rking/ag.vim'
 
 [[plugins]]
-repo = 'tyru/eskk.vim'
+repo = 'vim-skk/skkeleton'

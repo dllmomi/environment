@@ -1,15 +1,3 @@
-set number
-set noswapfile
-filetype indent on
-set tabstop=2
-set shiftwidth=2
-set expandtab
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-set fileencodings=utf-8,cp932,sjis
-set fileformats=unix,dos,mac
-set ignorecase
-set hlsearch
-
 let s:dein_dir = expand('~/.cache/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -38,23 +26,42 @@ if dein#check_install()
   call dein#install()
 endif
 
-nnoremap <silent> ub :Unite buffer<CR>
-nnoremap <silent> uf :UniteWithBufferDir -buffer-name=files file<CR>
-nnoremap <silent> ur :Unite file_mru<CR>
+call ddu#custom#patch_global({
+  \    'ui': 'filer',
+  \    'sources': [{'name': 'file', 'params': {}}],
+  \    'sourceOptions': {
+  \      '_': {
+  \        'columns': ['filename'],
+  \      },
+  \    },
+  \    'kindOptions': {
+  \      'file': {
+  \        'defaultAction': 'open',
+  \      },
+  \    }
+  \  })
+
+call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L' })
+
+set number
+set list
+set noswapfile
+filetype indent on
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set fileencodings=utf-8,cp932,sjis
+set fileformats=unix,dos,mac
+set ignorecase
+
+nnoremap <silent> ds :call ddu#start({})<CR>
 nnoremap <silent> <S-l> :5wincmd ><CR>
 nnoremap <silent> <S-h> :5wincmd <<CR>
 nnoremap <silent> <S-k> :5wincmd +<CR>
 nnoremap <silent> <S-j> :5wincmd -<CR>
 nnoremap <C-]> g<C-]>
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
 
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
-
-" eskk
-if has('unix') && isdirectory($HOME . '/.eskk')
-  let g:eskk#directory = "~/.eskk"
-  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'utf-8', }
-endif
+let g:dein#install_github_api_token = '${GITHUB_API_TOKEN}'
